@@ -1,0 +1,14 @@
+<!-- social_media_app/templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h2>Welcome to the Social Media App</h2>
+    {% if user.is_authenticated %}
+        <p>Hello, {{ user.username }}!</p>
+        <!-- Display user posts, followers, etc. -->
+    {% else %}
+        <p>Please <a href="{% url 'login' %}">login</a> or <a href="{% url 'register' %}">register</a>.</p>
+    {% endif %}
+{% endblock %}
